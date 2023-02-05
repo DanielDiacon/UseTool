@@ -27,6 +27,10 @@
    <!-- style css -->
    <link rel="stylesheet" href="css/style.css">
    <!-- javascript code -->
+
+   <script src="libs/gsap/gsap.min.js" defer></script>
+   <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+   <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
    <script defer src="js/script.js"></script>
    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <title>UseTool</title>
@@ -34,422 +38,432 @@
 
 <body>
    <div class="wrapper">
+      <div class="content">
+         <!-- loading page -->
+         <div class="loader" id="loader">
+            <div class="spinner"></div>
+         </div>
 
-      <!-- loading page -->
-      <div class="loader" id="loader">
-         <div class="spinner"></div>
+         <!--header-->
+         <header class="header">
+            <div class="header__top">
+               <div class="header__logo">
+                  <img src="./img/ut-logo.png" alt="">
+               </div>
+               <div class="header__name-com">Use<span class="header__uppercase-letter">Tool</span></div>
+            </div>
+            <a class="header__authot-wrapper" href="https://www.instagram.com/daniel.diacon.work/">
+               <div class="header__author">
+                  <img src="img/d-logo.png" alt="">
+               </div>
+            </a>
+         </header>
+
+         <!--main-->
+         <main class="main">
+            <div class="container">
+               <section class="useful-sites">
+                  <div class="useful-sites__title title">Useful sites for web designers and frontend developers.</div>
+                  <div class="useful-sites__body">
+
+                     <a href="https://app.spline.design/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img style="border-radius: 50%;" src="img/sites/spline-logo.jpg" alt="">
+                           </div>
+                           <div class="site-item__name-site title">Spline</div>
+                           <div class="site-item__description">Go now to try.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                           <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <path fill="currentColor"
+                                 d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
+                           </svg>
+                           <svg class="site-item__new-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <path fill="currentColor"
+                                 d="M7.25 12.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2V9H7.25zM9.5 15h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5V9h-4zm9.75-6v4.5h-1.12V9.99h-1.25v3.52h-1.13V9H14.5v5c0 .55.45 1 1 1h4c.55 0 1-.45 1-1V9h-1.25z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://you.com/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/you-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">YOU.com</div>
+                           <div class="site-item__description">The site that will replace Google search.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://fffuel.co/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/fffuel-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">fffuel</div>
+                           <div class="site-item__description">fffuel is a collection of color tools</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                           <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <path fill="currentColor"
+                                 d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://library.relume.io/dashboard" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/relume-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">relume <br> library</div>
+                           <div class="site-item__description">The Relume Library, the largest Webflow component library
+                              in
+                              the world.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://zty.pe/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/ztype-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">Zty.pe</div>
+                           <div class="site-item__description">The game where you can train your typing speed.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://thenounproject.com/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/thenounproject-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">thenoun <br>project</div>
+                           <div class="site-item__description">Icons and Photos For Everything</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://haikei.app/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/haikei-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">ha!kei</div>
+                           <div class="site-item__description">Haikei is a web app to generate stunning visual content –
+                              ready to use with your design tools and workflow.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                           <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <path fill="currentColor"
+                                 d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://doodad.dev/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/doodad-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">doodad</div>
+                           <div class="site-item__description">Tools for making websites fast, expressive, accessible,
+                              and
+                              green.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://animatedbackgrounds.me/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/animated-bg-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">animated <br>back <br>grounds</div>
+                           <div class="site-item__description">Website with very high quality background animations.
+                           </div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://10015.io/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div style="width: 45px;" class="site-item__logo-site">
+                              <img src="img/sites/10015-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">10015.io</div>
+                           <div class="site-item__description">10015.io is a “free all-in-one toolbox” solution created
+                              to
+                              ease your life by preventing bookmark mess.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                           <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <path fill="currentColor"
+                                 d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://animista.net/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/animasta-logo.jpg" alt="">
+                           </div>
+                           <div class="site-item__name-site title">animasta</div>
+                           <div class="site-item__description">Animasta is the web page where you will be able to find
+                              various animations.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://www.flowbase.co/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/flowbase-logo.webp" alt="">
+                           </div>
+                           <div class="site-item__name-site title">flowbase</div>
+                           <div class="site-item__description">Flowbase is the worlds largest component resource site,
+                              with
+                              premium layouts, templates, tutorials, apps and so much more.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://fontesk.com/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/fontesk-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">fontesk</div>
+                           <div class="site-item__description">
+                              Fontesk is the site where there are 1000+ free fonts.
+                           </div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://www.shapedivider.app/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/shapedivider-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">shape <br>divider</div>
+                           <div class="site-item__description">Site to export a nice SVG for their latest project.</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://iconscout.com/" class="useful-sites__item site-item__wrapper">
+                        <div class="site-item">
+                           <div class="site-item__logo-site">
+                              <img src="img/sites/iconscout-logo.png" alt="">
+                           </div>
+                           <div class="site-item__name-site title">iconscout</div>
+                           <div class="site-item__description">Over 5.7 Million+ Design Assets</div>
+                           <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                  </div>
+               </section>
+
+               <section class="useful-channels">
+                  <div class="useful-channels__title title">
+                     Start following these channels to hone your skills by looking
+                     at the experience of other front-end developers and web designers.
+                  </div>
+                  <div class="useful-channels__body">
+                     <a href="https://www.instagram.com/frontendjoe/"
+                        class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img src="img/channels/frontendjoe-logo.png" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">frontendjoe</div>
+                           <div class="channel-item__description">
+                              He is a frontend developer, he shares his experience.</div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                     <a href="https://www.youtube.com/@codeonly" class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img style="border-radius: 50%;" src="img/channels/codeonly-logo.jpg" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">Code Only</div>
+                           <div class="channel-item__description">
+                              On this channel you will find many free professional HTML CSS JavaScript tutorials. </div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+                  </div>
+               </section>
+
+               <section class="useful-channels">
+                  <div class="useful-channels__title title">Useful neural networks.</div>
+                  <div class="useful-channels__body">
+                     <a href="https://chat.openai.com/chat" class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img src="img/neural networks/chatgpt-logo.png" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">ghatgpt</div>
+                           <div class="channel-item__description">This neural network has many possibilities. To learn
+                              more, visit the site.</div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+                     <a href="https://openai.com/dall-e-2/" class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img src="img/neural networks/dall-e2-logo.png" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">dall●e</div>
+                           <div class="channel-item__description">DALL·E 2 is a new AI system that can create realistic
+                              images and art from a description in natural language.</div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+                     <a href="https://namelix.com/" class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img src="img/neural networks/namelix-logo.jpg" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">namelix</div>
+                           <div class="channel-item__description">Generate a short, brandable business name using
+                              artificial intelligence</div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+                     <a href="https://looka.com/" class="useful-channels__item channel-item__wrapper">
+                        <div class="channel-item">
+                           <div class="channel-item__logo-channel">
+                              <img src="img/neural networks/looka-logo.png" alt="">
+                           </div>
+                           <div class="channel-item__name-channel title">looka</div>
+                           <div class="channel-item__description">Use Looka's AI-powered platform to design a logo and
+                              build a brand you love.</div>
+                           <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
+                              height="1em" viewBox="0 0 16 16">
+                              <path fill="currentColor"
+                                 d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
+                           </svg>
+                        </div>
+                     </a>
+
+                  </div>
+               </section>
+            </div>
+         </main>
+
+         <!-- footer -->
+         <footer class="footer">
+            <div class="container">
+               <div class="footer__title title">About Use<span class="header__uppercase-letter">Tool</span>.</div>
+               <div class="footer__text">
+                  This site was created to help frontend developers and web designers of different levels. On this page
+                  you
+                  will find many sites, channels and neural networks that will help you improvise your skills or ease
+                  some
+                  of the stages of creating your projects.
+               </div>
+               <div class="footer__bottom-row">
+                  <div class="footer__copy">© UseTool 2018-2023</div>
+                  <a href="https://danieldiacon.github.io/danieldiacon/" class="footer__author">
+                     Author Portofolio
+                  </a>
+               </div>
+            </div>
+         </footer>
+
+
       </div>
-
-      <!--header-->
-      <header class="header">
-         <div class="header__top">
-            <div class="header__logo">
-               <img src="./img/ut-logo.png" alt="">
-            </div>
-            <div class="header__name-com">Use<span class="header__uppercase-letter">Tool</span></div>
-         </div>
-         <a class="header__authot-wrapper" href="https://www.instagram.com/daniel.diacon.work/">
-            <div class="header__author">
-               <img src="img/d-logo.png" alt="">
-            </div>
-         </a>
-      </header>
-
-      <!--main-->
-      <main class="main">
-         <div class="container">
-            <section class="useful-sites">
-               <div class="useful-sites__title title">Useful sites for web designers and frontend developers.</div>
-               <div class="useful-sites__body">
-
-                  <a href="https://app.spline.design/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img style="border-radius: 50%;" src="img/sites/spline-logo.avif" alt="">
-                        </div>
-                        <div class="site-item__name-site title">Spline</div>
-                        <div class="site-item__description">Go now to try.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                        <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 24 24">
-                           <path fill="currentColor"
-                              d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
-                        </svg>
-                        <svg class="site-item__new-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 24 24">
-                           <path fill="currentColor"
-                              d="M7.25 12.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2V9H7.25zM9.5 15h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5V9h-4zm9.75-6v4.5h-1.12V9.99h-1.25v3.52h-1.13V9H14.5v5c0 .55.45 1 1 1h4c.55 0 1-.45 1-1V9h-1.25z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://you.com/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/you-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">YOU.com</div>
-                        <div class="site-item__description">The site that will replace Google search.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://fffuel.co/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/fffuel-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">fffuel</div>
-                        <div class="site-item__description">fffuel is a collection of color tools</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                        <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 24 24">
-                           <path fill="currentColor"
-                              d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://library.relume.io/dashboard" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/relume-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">relume <br> library</div>
-                        <div class="site-item__description">The Relume Library, the largest Webflow component library in
-                           the world.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://zty.pe/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/ztype-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">Zty.pe</div>
-                        <div class="site-item__description">The game where you can train your typing speed.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://thenounproject.com/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/thenounproject-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">thenoun <br>project</div>
-                        <div class="site-item__description">Icons and Photos For Everything</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://haikei.app/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/haikei-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">ha!kei</div>
-                        <div class="site-item__description">Haikei is a web app to generate stunning visual content –
-                           ready to use with your design tools and workflow.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                        <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 24 24">
-                           <path fill="currentColor"
-                              d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://doodad.dev/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/doodad-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">doodad</div>
-                        <div class="site-item__description">Tools for making websites fast, expressive, accessible, and
-                           green.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://animatedbackgrounds.me/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/animated-bg-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">animated <br>back <br>grounds</div>
-                        <div class="site-item__description">Website with very high quality background animations.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://10015.io/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div style="width: 45px;" class="site-item__logo-site">
-                           <img src="img/sites/10015-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">10015.io</div>
-                        <div class="site-item__description">10015.io is a “free all-in-one toolbox” solution created to
-                           ease your life by preventing bookmark mess.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                        <svg class="site-item__star-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 24 24">
-                           <path fill="currentColor"
-                              d="m12 18.275l-4.15 2.5q-.275.175-.575.15q-.3-.025-.525-.2q-.225-.175-.35-.437q-.125-.263-.05-.588l1.1-4.725L3.775 11.8q-.25-.225-.312-.513Q3.4 11 3.5 10.725q.1-.275.3-.45q.2-.175.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45q.262-.15.537-.15t.538.15q.262.15.387.45l1.875 4.45l4.85.425q.35.05.55.225q.2.175.3.45q.1.275.038.562q-.063.288-.313.513l-3.675 3.175l1.1 4.725q.075.325-.05.588q-.125.262-.35.437q-.225.175-.525.2q-.3.025-.575-.15Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://animista.net/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/animasta-logo.jpg" alt="">
-                        </div>
-                        <div class="site-item__name-site title">animasta</div>
-                        <div class="site-item__description">Animasta is the web page where you will be able to find
-                           various animations.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://www.flowbase.co/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/flowbase-logo.webp" alt="">
-                        </div>
-                        <div class="site-item__name-site title">flowbase</div>
-                        <div class="site-item__description">Flowbase is the worlds largest component resource site, with
-                           premium layouts, templates, tutorials, apps and so much more.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://fontesk.com/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/fontesk-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">fontesk</div>
-                        <div class="site-item__description">
-                           Fontesk is the site where there are 1000+ free fonts.
-                        </div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://www.shapedivider.app/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/shapedivider-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">shape <br>divider</div>
-                        <div class="site-item__description">Site to export a nice SVG for their latest project.</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://iconscout.com/" class="useful-sites__item site-item__wrapper">
-                     <div class="site-item">
-                        <div class="site-item__logo-site">
-                           <img src="img/sites/iconscout-logo.png" alt="">
-                        </div>
-                        <div class="site-item__name-site title">iconscout</div>
-                        <div class="site-item__description">Over 5.7 Million+ Design Assets</div>
-                        <svg class="site-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                           viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-               </div>
-            </section>
-
-            <section class="useful-channels">
-               <div class="useful-channels__title title">
-                  Start following these channels to hone your skills by looking
-                  at the experience of other front-end developers and web designers.
-               </div>
-               <div class="useful-channels__body">
-                  <a href="https://www.instagram.com/frontendjoe/" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img src="img/channels/frontendjoe-logo.png" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">frontendjoe</div>
-                        <div class="channel-item__description">
-                           He is a frontend developer, he shares his experience.</div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-                  <a href="https://www.youtube.com/@codeonly" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img style="border-radius: 50%;" src="img/channels/codeonly-logo.jpg" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">Code Only</div>
-                        <div class="channel-item__description">
-                           On this channel you will find many free professional HTML CSS JavaScript tutorials. </div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-               </div>
-            </section>
-
-            <section class="useful-channels">
-               <div class="useful-channels__title title">Useful neural networks.</div>
-               <div class="useful-channels__body">
-                  <a href="https://chat.openai.com/chat" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img src="img/neural networks/chatgpt-logo.png" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">ghatgpt</div>
-                        <div class="channel-item__description">This neural network has many possibilities. To learn
-                           more, visit the site.</div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-                  <a href="https://openai.com/dall-e-2/" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img src="img/neural networks/dall-e2-logo.png" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">dall●e</div>
-                        <div class="channel-item__description">DALL·E 2 is a new AI system that can create realistic
-                           images and art from a description in natural language.</div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-                  <a href="https://namelix.com/" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img src="img/neural networks/namelix-logo.jpg" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">namelix</div>
-                        <div class="channel-item__description">Generate a short, brandable business name using
-                           artificial intelligence</div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-                  <a href="https://looka.com/" class="useful-channels__item channel-item__wrapper">
-                     <div class="channel-item">
-                        <div class="channel-item__logo-channel">
-                           <img src="img/neural networks/looka-logo.png" alt="">
-                        </div>
-                        <div class="channel-item__name-channel title">looka</div>
-                        <div class="channel-item__description">Use Looka's AI-powered platform to design a logo and
-                           build a brand you love.</div>
-                        <svg class="channel-item__acces-button" xmlns="http://www.w3.org/2000/svg" width="1em"
-                           height="1em" viewBox="0 0 16 16">
-                           <path fill="currentColor"
-                              d="M2 5.25A3.25 3.25 0 0 1 5.25 2h5.5A3.25 3.25 0 0 1 14 5.25v2a.75.75 0 0 1-1.5 0v-2a1.75 1.75 0 0 0-1.75-1.75h-5.5A1.75 1.75 0 0 0 3.5 5.25v5.5c0 .966.784 1.75 1.75 1.75h3a.75.75 0 0 1 0 1.5h-3A3.25 3.25 0 0 1 2 10.75v-5.5Zm4 1.5A.75.75 0 0 1 6.75 6h3.5a.75.75 0 0 1 0 1.5H8.56l4.22 4.22a.75.75 0 1 1-1.06 1.06L7.5 8.56v1.69a.75.75 0 0 1-1.5 0v-3.5Z" />
-                        </svg>
-                     </div>
-                  </a>
-
-               </div>
-            </section>
-         </div>
-      </main>
-
-      <!-- footer -->
-      <footer class="footer">
-         <div class="container">
-            <div class="footer__title title">About Use<span class="header__uppercase-letter">Tool</span>.</div>
-            <div class="footer__text">
-               This site was created to help frontend developers and web designers of different levels. On this page you
-               will find many sites, channels and neural networks that will help you improvise your skills or ease some
-               of the stages of creating your projects.
-            </div>
-            <div class="footer__bottom-row">
-               <div class="footer__copy">© UseTool 2018-2023</div>
-               <a href="https://danieldiacon.github.io/danieldiacon/" class="footer__author">
-                  Author Portofolio
-               </a>
-            </div>
-         </div>
-      </footer>
-
    </div>
 </body>
 
