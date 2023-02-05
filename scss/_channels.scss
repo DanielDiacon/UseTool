@@ -1,0 +1,111 @@
+.useful-channels {
+   &__title {
+      padding: 40px 20px 20px 0;
+   }
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit , minmax(430px,1fr));
+      gap: 30px; 
+      @media only screen and (max-width:$mobile) {
+         gap: 20px; 
+      }  
+   }
+}
+.channel-item {
+   display: flex;
+   align-items: center;
+   height: 100%;
+   padding: 20px;
+   &__wrapper {
+      color: white;
+      border-radius: 20px;
+      background: rgba($color: $white, $alpha: 0.02);
+      position: relative;
+      transition: .2s $trasCube;
+   }
+   &__wrapper:hover{
+      background: rgba($color: $white, $alpha: 0.1);
+   }
+   &__logo-channel {
+      min-height: 50px;
+      min-width: 50px;
+      position: relative;
+   }
+   &__logo-channel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__name-channel {
+      text-align: center;
+      padding: 20px;
+   }
+   &__description {
+      margin-right: 40px;
+   }
+   &__acces-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 30px;
+      margin: 10px;
+      cursor: pointer;
+   }
+
+}
+@media only screen and (max-width:$mobile) {
+   .useful-channels {
+      &__body {
+         display: grid;
+         grid-template-columns: repeat(auto-fit , minmax(200px,1fr));
+      }
+   }
+   .channel-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding: 20px;
+      &__wrapper {
+         color: white;
+         border-radius: 20px;
+         background: rgba($color: $white, $alpha: 0.02);
+         position: relative;
+         transition: .2s $trasCube;
+      }
+      &__wrapper:hover{
+         background: rgba($color: $white, $alpha: 0.1);
+      }
+      &__logo-channel {
+         height: 50px;
+         width: 50px;
+         position: relative;
+      }
+      &__logo-channel img{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+      }
+      &__name-channel {
+         text-align: center;
+         padding: 10px 0;
+      }
+      &__description {
+         text-align: center;
+         margin-right: 0px;
+         padding-bottom: 20px;
+      }
+      &__acces-button {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         font-size: 30px;
+         margin: 10px;
+         cursor: pointer;
+      }
+   }
+}

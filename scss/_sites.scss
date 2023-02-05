@@ -1,0 +1,73 @@
+.useful-sites {
+   &__title {
+      padding: 10px 20px 20px 0;
+   }
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit , minmax(200px,1fr));
+      gap: 30px; 
+   }
+}
+
+
+.site-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+   padding: 20px;
+   &__wrapper {
+      color: white;
+      border-radius: 20px;
+      background: rgba($color: $white, $alpha: 0.02);
+      position: relative;
+      transition: .2s $trasCube;
+   }
+   &__wrapper:hover{
+      background: rgba($color: $white, $alpha: 0.1);
+   }
+   &__logo-site {
+      height: 50px;
+      width: 50px;
+      position: relative;
+   }
+   &__logo-site img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__name-site {
+      text-align: center;
+      padding: 10px 0;
+   }
+   &__description {
+      text-align: center;
+      padding-bottom: 20px;
+   }
+   &__acces-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 30px;
+      margin: 10px;
+      cursor: pointer;
+   }
+   &__star-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 34px;
+      margin: 10px;
+      color: yellow;
+	}
+	&__new-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 40px;
+      margin:5px 10px;
+      color: #01ff67;
+	}
+}

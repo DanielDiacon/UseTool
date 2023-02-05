@@ -1,0 +1,65 @@
+
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: var(--doc-height);
+   min-height: 400px;
+   transition: .5s $trasCube;
+   @media only screen and (max-width:$mobile) {
+      
+   }
+   width: 60px;
+   writing-mode: vertical-rl;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   &__top {
+      margin-top: 12px;
+      max-height: 350px; 
+      display: flex;
+      align-items: center;
+   }
+   &__uppercase-letter{
+      color: $mainColor1;
+   }
+   &__logo{
+      min-width: 40px;
+      min-height: 40px;
+      position: relative;
+      margin-bottom: 10px;
+   }
+   &__name-com{
+      font-size: 40px;
+   }
+   &__logo img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__authot-wrapper{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+   }
+   &__author {
+      width: 60px;
+      height: 145.4px;
+      position: relative;
+   }
+   &__author img{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: .3s $trasCube;
+   }
+   &__author img:hover{
+      filter: grayscale(0%);
+   }
+}

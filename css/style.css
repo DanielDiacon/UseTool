@@ -281,7 +281,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: var(--doc-height);
   min-height: 400px;
   transition: 0.5s cubic-bezier(0.28, 0.63, 0.44, 0.78);
   width: 60px;
@@ -290,11 +290,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-@media only screen and (max-width: 767.98px) {
-  .header {
-    height: var(--doc-height);
-  }
 }
 .header__top {
   margin-top: 12px;
@@ -447,7 +442,6 @@ main {
   font-size: 34px;
   margin: 10px;
   color: yellow;
-  cursor: pointer;
 }
 .site-item__new-icon {
   position: absolute;
@@ -456,7 +450,6 @@ main {
   font-size: 40px;
   margin: 5px 10px;
   color: #01ff67;
-  cursor: pointer;
 }
 
 .useful-channels__title {
