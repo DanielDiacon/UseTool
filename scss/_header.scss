@@ -1,14 +1,12 @@
 
 .header {
+   z-index: 100;
    position: fixed;
    top: 0;
    left: 0;
-   height: var(--doc-height);
+   height: 100svh;
    min-height: 400px;
    transition: .5s $trasCube;
-   @media only screen and (max-width:$mobile) {
-      
-   }
    width: 60px;
    writing-mode: vertical-rl;
    display: flex;

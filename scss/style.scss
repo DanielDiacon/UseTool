@@ -29,11 +29,6 @@ $boxShadow: 0px -0px 16px -8px rgba(
       $alpha: 0.3,
    );
 
-//100vh mobile problem <=>
-:root {
-   --doc-height: 100%;
-}
-
 // max width for container <=>
 $minWidth: 320;
 $maxWidth: 1920;
@@ -52,7 +47,6 @@ body {
    color: $white;
    background: $black;
    min-height: -webkit-fill-available;
-   height: var(--doc-height);
    line-height: 18px;
    caret-color: $mainColor1;
    font-family: $fontFamily;
@@ -201,6 +195,5 @@ main {
 //import scss modules<=>
 @import "_header.scss";
 @import "_footer.scss";
-@import "_not-found.scss";
 @import "_sites.scss";
 @import "_channels.scss";

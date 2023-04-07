@@ -2,17 +2,10 @@
 // loading page <=>
 const loader = document.getElementById("loader");
 window.addEventListener("load", function () {
-   loader.style.display = "none";
+   loader.style.visibility = "hidden";
+   loader.style.opacity = "0";
+   loader.style.transition = "0.7s";
 });
-
-
-// 100vh form mobile <=>
-const documentHeight = () => {
-   const doc = document.documentElement
-   doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', documentHeight)
-documentHeight()
 
 //smooth scroll <=>
 window.addEventListener('scroll', e => {
